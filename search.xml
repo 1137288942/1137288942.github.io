@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>Hello my New World</title>
+      <link href="/2018/12/20/Hello-my-New-World/"/>
+      <url>/2018/12/20/Hello-my-New-World/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天给萌萌尝试着搭建了这个博客，花了差不多半天的时间，部分功能还没调试完成，总的来说界面很清新，我倒是蛮喜欢的。</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>这次更新了之后，就应该不会再进行大的变动了，也是时隔一段时间没有更新博客了。<br>原因是前一段时间满课，周末在忙着比赛，基本上是天天加班，顺着带着也记录下这段时间的经历吧</p><p>“领航杯”之后应该一直都是满课的，从早上到晚。对于课程的安排我反正是无力吐槽了，身为一名大四的信安专业学生，却在课堂上一点专业知识都学不到。</p><p>“东华杯”的线上赛发挥还是挺好的，拿下了一道密码二血，跟着蒋师傅把战队总到了决赛，可惜决赛那周周末比赛较多，少了一次线下比赛的机会。转身去打了X-nuca全国高校联赛。</p><p>X-nuca是在厦门打的，是作为“博鹭杯”同行去厦门的，虽说是同行不用上场，但X-nuca的线上同样至关重要，只有我和蒋师傅两个人参加，可以说线上打得是十分难受了，从头至尾我这个密码+三流web手只解出了一道题目，最后还是靠着徐教员的帮忙，才挺进了决赛。还是自己太菜了。。</p><p>“鹏城杯”的线上赛还是蛮轻松的，密码题拿了个一血，misc和web也是在何师傅的指导下出了几道题目，最后凭着一个不错的名次进入了决赛</p><p>X-nuca和“鹏城杯”的线下赛是我今年成长最大的一次。也正是这两场比赛真正地打醒了我这只菜鸡。。满场纷飞的pwn题打得我没脾气。由于主办方的失误有幸让我们提前拿到了源码，虽说分析了一波写出了exp，但在服务器上线的时候，瞬间就被打到绝望。</p><p>赛后打听到，牛*的大佬队伍都是本地跑好了连接ssh，down源码的脚本，就算单身二十年的手速同样是追不上计算机的脚步啊。。。跟神仙们的差距太大了，不论是思路还是技术都很落后，现在早已不是闭关修炼二十年出山就能当老大的时代了。</p><p>本事是自己的，我不甘心做一只井底之蛙。。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> daily </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/12/20/hello-world/"/>
+      <url>/2018/12/20/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+  
+  
+</search>
