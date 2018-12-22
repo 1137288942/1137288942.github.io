@@ -15,13 +15,25 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="ahai‘s blog">
-<meta property="og:url" content="http://www.de4thstr0ke.com/archives/2018/12/index.html">
+<meta name="description" content="2018年安恒杯十二月月赛，部分misc、blockchain题目WriteUp。">
+<meta name="keywords" content="安恒月赛,CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018安恒杯十二月月赛-部分WriteUp">
+<meta property="og:url" content="http://www.de4thstr0ke.com/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/index.html">
 <meta property="og:site_name" content="ahai‘s blog">
+<meta property="og:description" content="2018年安恒杯十二月月赛，部分misc、blockchain题目WriteUp。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.imgur.com/KxfXS1P.jpg">
+<meta property="og:image" content="https://i.imgur.com/NwgyFtX.jpg">
+<meta property="og:image" content="https://i.imgur.com/nq8lv5n.jpg">
+<meta property="og:image" content="https://i.imgur.com/7dpWJxF.png">
+<meta property="og:image" content="https://i.imgur.com/oFziHrn.jpg">
+<meta property="og:image" content="https://i.imgur.com/78xqDhM.jpg">
+<meta property="og:updated_time" content="2018-12-22T13:34:54.285Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ahai‘s blog">
+<meta name="twitter:title" content="2018安恒杯十二月月赛-部分WriteUp">
+<meta name="twitter:description" content="2018年安恒杯十二月月赛，部分misc、blockchain题目WriteUp。">
+<meta name="twitter:image" content="https://i.imgur.com/KxfXS1P.jpg">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -53,7 +65,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2018/12 | ahai‘s blog</title>
+<title>2018安恒杯十二月月赛-部分WriteUp | ahai‘s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,8 +75,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -274,122 +286,202 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-2018安恒杯十二月月赛-部分WriteUp" class="article article-type-post" itemscope="" itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/" class="archive-article-date">
-      <time datetime="2018-12-22T12:25:23.000Z" itemprop="datePublished">12-22</time>
+    <div class="article-meta">
+      <a href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/" class="article-date">
+      <time datetime="2018-12-22T12:25:23.000Z" itemprop="datePublished">2018-12-22</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/">2018安恒杯十二月月赛-部分WriteUp</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018安恒杯十二月月赛-部分WriteUp
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安恒月赛/">安恒月赛</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>早早的就报了名，可惜今天满课，只有中午和下午4点之后的时间打了一下比赛，pwn题是战队的大佬帮忙出的，听说蛮简单的，等Peanuts大佬更新出WriteUp我再更新学习下。总的来说月赛的题目难度较小，比较适合新手入门。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p>解压题目包，给出了两个文件</p>
+<pre><code>-备忘录.txt
+-只要学不死就往死里学.zip
+</code></pre><p>通过解压软件可以看到在zip包中也存在“备忘录.txt“<br>这样的话，必然是已知明文攻击了</p>
+<p><a href="http://www.cnblogs.com/leixiao-/p/9824557.html" target="_blank" rel="noopener">zip的各种攻击方式</a></p>
+<p>这样就可以获得破解密码 <strong>1qazmko098</strong></p>
+<p>解压得到了一个word文件</p>
+<pre><code>-学习资料.docx
+</code></pre><p><img src="https://i.imgur.com/KxfXS1P.jpg" alt=""></p>
+<p>参考这其中的方法 <a href="https://blog.csdn.net/DRondong/article/details/79322799" target="_blank" rel="noopener">word隐写方法</a></p>
+<p>移动图片就能看到flag</p>
+<p><img src="https://i.imgur.com/NwgyFtX.jpg" alt=""></p>
+<h3 id="JUJU"><a href="#JUJU" class="headerlink" title="JUJU"></a>JUJU</h3><p>直接解压出一个损坏的png文件</p>
+<pre><code>-juju.png
+</code></pre><p>因此先使用010editor修复下</p>
+<p>直接跑png模板就能将CRC校验值修改过来，从而能正常打开图片</p>
+<p>题目中提示有11只猪，但明显图片上的数目不够，因此考虑是不是要修改图片长度</p>
+<p><a href="https://blog.csdn.net/persist213/article/details/79374914" target="_blank" rel="noopener">misc中的png隐写</a></p>
+<p>从中可以了解到，png的宽度是不可以更改的，但是长度可以进行修改，因此稍微将长度加大，就可以在下文中看到字符串</p>
+<p><img src="https://i.imgur.com/nq8lv5n.jpg" alt=""></p>
+<pre><code>MZWGCZ33GQZTQMTEM5SGMMTEPU=====
+</code></pre><p>显然不是base64（base64最多只能有两个=）</p>
+<p>因此考虑尝试其他base编码，经过base32解码后能看到flag</p>
+<p><img src="https://i.imgur.com/7dpWJxF.png" alt=""></p>
+<p>按要求将{}中的字符串md5后就是最后的答案</p>
+<h2 id="Blockchain"><a href="#Blockchain" class="headerlink" title="Blockchain"></a>Blockchain</h2><h3 id="CoinFlip"><a href="#CoinFlip" class="headerlink" title="CoinFlip"></a>CoinFlip</h3><p>我也是第一次接触区块链的题目，也是听说晚上有原题，就搜了下然后进行了复现</p>
+<p><a href="https://www.secpulse.com/archives/73682.html" target="_blank" rel="noopener">https://www.secpulse.com/archives/73682.html</a></p>
+<p><a href="http://foreversong.cn/archives/1295" target="_blank" rel="noopener">http://foreversong.cn/archives/1295</a></p>
+<p><a href="https://remix.ethereum.org/" target="_blank" rel="noopener">https://remix.ethereum.org/</a></p>
+<p>将.sol文件直接拖进去，按照</p>
+<p><a href="https://www.linkedbyx.com/taskinfo/368/detail" target="_blank" rel="noopener">https://www.linkedbyx.com/taskinfo/368/detail</a></p>
+<p>文章里的操作步骤进行复现</p>
+<p>要注意找好对应的版本</p>
+<p><img src="https://i.imgur.com/oFziHrn.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/78xqDhM.jpg" alt=""></p>
+<p>最后就能到邮件中收到flag</p>
+<p>flag{e0a8634dbb9bd36581a65ca00e2ca886}</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>凑巧今天并列第三名，拿了10w积分，才知道原来安恒的奖励力度这么高（我才不是为了奖励…）这样的话，还是要多参加一下的哈哈哈哈。写的不够到位，各位大佬可以发邮件批评指正，邮箱就在头像下方呦！</p>
+
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/12/21/Crypto-Task-1/" class="archive-article-date">
-      <time datetime="2018-12-21T02:02:06.000Z" itemprop="datePublished">12-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/21/Crypto-Task-1/">Crypto Task 1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Crypto/">Crypto</a></li></ul>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/">2018安恒杯十二月月赛-部分WriteUp</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">A Hai</a></p>
+        <p><span>发布时间:</span>2018-12-22, 20:25:23</p>
+        <p><span>最后更新:</span>2018-12-22, 21:34:54</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/" title="2018安恒杯十二月月赛-部分WriteUp">http://www.de4thstr0ke.com/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.de4thstr0ke.com/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/　　作者: A Hai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/12/21/Crypto-Task-1/">
+                    Crypto Task 1
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/12/20/Hello-my-New-World/" class="archive-article-date">
-      <time datetime="2018-12-20T14:36:19.000Z" itemprop="datePublished">12-20</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">2.1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习资料"><span class="toc-number">2.1.1.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JUJU"><span class="toc-number">2.1.2.</span> <span class="toc-text">JUJU</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blockchain"><span class="toc-number">2.2.</span> <span class="toc-text">Blockchain</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CoinFlip"><span class="toc-number">2.2.1.</span> <span class="toc-text">CoinFlip</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/20/Hello-my-New-World/">Hello my New World</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"2018安恒杯十二月月赛-部分WriteUp　| ahai‘s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
+    
+</div>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/daily/">daily</a></li></ul>
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/12/21/Crypto-Task-1/" title="下一篇: Crypto Task 1">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/">2018安恒杯十二月月赛-部分WriteUp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/21/Crypto-Task-1/">Crypto Task 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/20/Hello-my-New-World/">Hello my New World</a></li></ul>
 
-    
 
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
