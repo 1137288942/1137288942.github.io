@@ -15,13 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="ahai‘s blog——阿海的Blog">
-<meta property="og:url" content="http://www.de4thstr0ke.com/tags/实战/index.html">
+<meta name="description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
+<meta name="keywords" content="Wi-Fi,无线基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wi-Fi基本知识学习">
+<meta property="og:url" content="http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/index.html">
 <meta property="og:site_name" content="ahai‘s blog——阿海的Blog">
+<meta property="og:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-05T16:02:30.577Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ahai‘s blog——阿海的Blog">
+<meta name="twitter:title" content="Wi-Fi基本知识学习">
+<meta name="twitter:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -53,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 实战 | ahai‘s blog——阿海的Blog</title>
+<title>Wi-Fi基本知识学习 | ahai‘s blog——阿海的Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,9 +68,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -261,56 +266,212 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Wi-Fi基本知识学习" class="article article-type-post" itemscope="" itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/12/27/2018网络安全攻防演练/" class="archive-article-date">
-      <time datetime="2018-12-27T12:00:21.000Z" itemprop="datePublished">12-27</time>
+    <div class="article-meta">
+      <a href="/2019/01/05/Wi-Fi基本知识学习/" class="article-date">
+      <time datetime="2019-01-05T14:40:40.000Z" itemprop="datePublished">2019-01-05</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/27/2018网络安全攻防演练/">2018网络安全攻防演练</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Wi-Fi基本知识学习
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实战/">实战</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wi-Fi/">Wi-Fi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/无线基础知识/">无线基础知识</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="基本概述"><a href="#基本概述" class="headerlink" title="基本概述"></a>基本概述</h1><h2 id="有线和无线网络"><a href="#有线和无线网络" class="headerlink" title="有线和无线网络"></a>有线和无线网络</h2><p>目前，有线网络中最著名的是以太网（Ethenet），但是无线网络WLAN是一个很有前景的发展领域，虽然不会完全取代以太网，但是随着便携式的发展，它会拥有越来越多的用户，无线网络中最有前景的就是Wi-Fi技术。</p>
+<p>无线网络相比有线网络，还是有很多不足的</p>
+<ol>
+<li>通信双方因为是通过无线进行通信，所以通信前需要建立连接；而有线网络就直接使用线缆连接，就不需要这个过程了。</li>
+<li>通信双方通信方式是半双工的通信方式；而有线网络可以全双工</li>
+<li>通信时在网络层一下出错的概率非常高，所以帧的重传概率很大，需要在网络层之下的协议添加重传机制（不能只依赖于上层TCP/IP的延时等待重传等来保证）；而有线网络出错概率非常小，无需在网络层有如此复杂的机制。</li>
+<li>数据是在无线环境下进行的，所以抓包很容易，存在安全隐患</li>
+<li>因为收发无线信号，所以功耗很大，对电池要求较大</li>
+<li>相对有线网络吞吐量低，这一点正在逐步改善，802.11n协议可达600Mbps的吞吐量。</li>
+</ol>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p>Ethenet和Wi-Fi采用的协议都属于IEEE802协议集。其中，Ethenet以802.3协议做为其网络层以下的协议；而Wi-Fi以802.11做为其网络层以下的协议。无论是有线网络，还是无线网络，其网络层以上的部分，基本一样。</p>
+<p>这里主要关注下Wi-Fi网络中相关的问题。Wi-Fi的802.11协议包含许多子部分。其中按照时间顺序发展，主要有：</p>
+<ol>
+<li>802.11a，1999年9月制定，工作在5GHz的频率范围（频段宽度325MHz），最大传输速率54mbps。</li>
+<li>802.11b，1999年9月制定，时间比802.11a稍晚，工作在2.4G的频率范围（频段宽度83.5MHz），最大传输速率11mbps。</li>
+<li>802.11g，2003年6月制定，工作在2.4GHz频率范围（频段宽度83.5MHz），最大传输速率54mbps。</li>
+<li>802.11n，2009年发布，在2.4GHz和5GHz均可工作，最大传输速率为600mbps</li>
+</ol>
+<p>这些协议均为无线网络的通信所需的基本协议，最新发展的，一般要比最初的有所改进。</p>
+<p>另外值得注意的是，802.11n在MAC层进行了一些重要的改进，所以导致网络性能有了很大的提升，比如：</p>
+<ol>
+<li><p>因为传输速率很大程度上取决于Channel（信道）的ChannelWidth有多宽，而802.11n协议中采用了一种新技术，可以在传输数据时，将两个信道合并为一个进行传输，这样极大地提高了传输速率（又称HT-40，high through）</p>
+</li>
+<li><p>802.11n的MIMO（多输入输出）特性，使得两对天线可以在同时同Channel上进行传输数据，而两者却能够不互相干扰（采用了OFDM特殊的调制技术）</p>
+</li>
+</ol>
+<p>更新于2018.01.05，未完待续…</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/01/05/Wi-Fi基本知识学习/">Wi-Fi基本知识学习</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">A Hai</a></p>
+        <p><span>发布时间:</span>2019-01-05, 22:40:40</p>
+        <p><span>最后更新:</span>2019-01-06, 00:02:30</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/01/05/Wi-Fi基本知识学习/" title="Wi-Fi基本知识学习">http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/　　作者: A Hai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/12/28/手机WI-FI信号采集网络的设计与实现/">
+                    手机WI-FI信号采集网络的设计与实现
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概述"><span class="toc-number">1.</span> <span class="toc-text">基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有线和无线网络"><span class="toc-number">1.1.</span> <span class="toc-text">有线和无线网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.2.</span> <span class="toc-text">协议</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Wi-Fi基本知识学习　| ahai‘s blog——阿海的Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/';
+            this.page.identifier = '2019/01/05/Wi-Fi基本知识学习/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//www-de4thstr0ke-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/12/28/手机WI-FI信号采集网络的设计与实现/" title="下一篇: 手机WI-FI信号采集网络的设计与实现">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/Wi-Fi基本知识学习/">Wi-Fi基本知识学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/28/手机WI-FI信号采集网络的设计与实现/">手机WI-FI信号采集网络的设计与实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/27/2018网络安全攻防演练/">2018网络安全攻防演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/">2018安恒杯十二月月赛-部分WriteUp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/21/Crypto-Task-1/">Crypto Task 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/20/Hello-my-New-World/">Hello my New World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
