@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="ahai‘s blog——阿海的Blog">
 <meta property="og:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-05T16:02:30.577Z">
+<meta property="og:updated_time" content="2019-01-06T09:19:30.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wi-Fi基本知识学习">
 <meta name="twitter:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
@@ -332,7 +332,21 @@
 <li><p>802.11n的MIMO（多输入输出）特性，使得两对天线可以在同时同Channel上进行传输数据，而两者却能够不互相干扰（采用了OFDM特殊的调制技术）</p>
 </li>
 </ol>
-<p>更新于2018.01.05，未完待续…</p>
+<p>以上更新于2018年1月5日….</p>
+<hr>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>讲述之前，我们需要对无线网络中一些常用的术语有所了解。这里先列出一些，后面描述中出现的新的术语，将会在描述中解释。</p>
+<ol>
+<li>LAN：即局域网，是路由和主机组成的内部局域网，一般为有线网络</li>
+<li>WAN：即广域网，是外部一个更大的局域网</li>
+<li>WLAN（Wireless LAN，即无线局域网）：前面我们说的LAN是局域网，更多指的的是有线网络中的局域网，无线网络中的局域网，一般用WLAN</li>
+<li>AP（Access Point的简称，即访问点，接入点）：是一个无线网络中的其他类型节点，可以和无线网络外部以及内部进行通信。一般AP和无线路由都在一台设备上。</li>
+<li>Station（工作站）：表示连接到无线网络中的设备，这些设备通过AP，可以和内部其他设备或无线网络外部通信。</li>
+<li>Associate（连接）：如果一个Station想要加入到无线网络中，需要和这个无线网络中的AP关联（即Associate）</li>
+<li>SSID：用来标识一个无线网络，后面会详细介绍，我们这里只需了解，每个无线网络都有它自己的SSID。</li>
+<li>BSS（Basic Service Set）：由一组相互通信的工作站组成，是802.11无线网络的基本组件。主要有两种类型：IBSS和基础结构型网络。IBSS又叫ADHOC，组网是临时的，通信方式为Station<->Station；基础结构型网络，其通信方式是Station<->AP<->Station，也就是所有无线网络中的设备想要通信，都要经过AP。在无线网络的基础型网络中嘛，最重要的两种设备：AP和Station。</-></-></-></li>
+<li>BSSID：用来标识一个BSS，其格式和MAC地址一样，是48位的地址格式。一般来说，它就是所处的无线接入点的MAC地址。某种程度来说，他的作用和SSID类似，但是SSID是网络的名字，是给人看的。BSSID是给机器看的，BSSID类似MAC地址。</li>
+<li>DS（Distributed System）：即分布式系统。分布式系统属于802.11逻辑组件，负责将帧转发至目的地址，802.11并未规定其技术细节，大多数商业产品以桥接引擎和分布式系统媒介共同构成分布式系统。分布式系统是接入点之间转发帧的骨干网络，一般是以太网。其实，骨干网络并不是分布系统的全部，而是其媒介。主要有三点：骨干网（例如以太网）、桥接器（具有有线无线两个网络接口的接入点）、属于骨干网上的接入点所管辖的基础型网络的station通信（和外界或者BSS内部的station）</li>
+</ol>
 
       
     </div>
@@ -344,7 +358,7 @@
         <p><span>本文标题:</span><a href="/2019/01/05/Wi-Fi基本知识学习/">Wi-Fi基本知识学习</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">A Hai</a></p>
         <p><span>发布时间:</span>2019-01-05, 22:40:40</p>
-        <p><span>最后更新:</span>2019-01-06, 00:02:30</p>
+        <p><span>最后更新:</span>2019-01-06, 17:19:30</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/01/05/Wi-Fi基本知识学习/" title="Wi-Fi基本知识学习">http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/　　作者: A Hai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -374,7 +388,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概述"><span class="toc-number">1.</span> <span class="toc-text">基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有线和无线网络"><span class="toc-number">1.1.</span> <span class="toc-text">有线和无线网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.2.</span> <span class="toc-text">协议</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概述"><span class="toc-number">1.</span> <span class="toc-text">基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有线和无线网络"><span class="toc-number">1.1.</span> <span class="toc-text">有线和无线网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.2.</span> <span class="toc-text">协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#术语"><span class="toc-number">1.3.</span> <span class="toc-text">术语</span></a></li></ol></li></ol>
         
     </div>
     <style>
