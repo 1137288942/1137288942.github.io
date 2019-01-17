@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="ahai‘s blog——阿海的Blog">
 <meta property="og:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-16T15:28:06.798Z">
+<meta property="og:updated_time" content="2019-01-17T13:18:57.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wi-Fi基本知识学习">
 <meta name="twitter:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
@@ -362,9 +362,20 @@
 <li>Region（区域）：一般在无线网络中的AP上都有一个参数，表明它是处于哪个Region（地区）。Station根据AP中设置的Region调整其相应的发射功率以遵守该地区的规定。AP调整过程一般都是手动设定，设置好AP所处的Region之后，这些信息就会在AP发送的Beacon帧（后面会说到）中包含了；通过这个AP连接到无线网络上的Station，从Beacon帧中了解到这些Region信息，并且根据这些信息中的规定和AP进行通信。如果AP开始设置错了，那么Station和AP通信的时候，采用的将是不符合Region规定的频段，可能会对该Region中的其他传输网络造成干扰，这应当是“非法”的。</li>
 <li><p>Transmission Rate（传输速率）：设置传输速率。这里采用不同的无线网络传输协议（802.11a，802.11b，802.11g等），那么可以设置的速率范围有所不同，这里的速度是指理论的速度。实际中，由于各种干扰因素，传输的速率可能会比设置的小。</p>
 <p> 一般而言，在无线网络中，对于某种协议的性能进行描述时，我们需要注意的是，描述时提到的传输速率（Datarate）和吞吐量（Throughput）是不同的。Datarate是理论上面的最大数据传输速率，而Throughput是数据的实际最大吞吐量。因为厂家以及传输时所使用的协议等各种因素造成的开销，会导致实际吞吐量比理论吞吐量要小，一般实际最大吞吐量为理论最大的50%左右（一个不太准确但是相对直观的估计：在网络中，高清视频所需的Throughput也就30mbps左右，网络上一般的视频也就4mbps左右）</p>
+<p> 以上更新于2019.1.16….</p>
+</li>
+<li><p>Qos（质量保证）：无线网络中的QOS是质量保证，大致的意思是，传输数据的时候，考虑各种因素（例如收费策略，所处地区等），以一定的优先级来保证传输的特定要求（一般就是速度），如果带宽足够的话，QOS反而不需要了。</p>
+</li>
+<li><p>RTS Threshold/CTS Protection Mode：这里的RTS是Request-To-Send的简写，CTS是Clear-To-Send的简写。设置好RTS的阈值后，如果超过这个阈值就会在发送信息之前发送RTS，以减少干扰，相应的CTS会回应之前的RTS。一般都是AP发送CTS数据，而Station发送RTS数据。</p>
+<p>这里对RTS和CTS做一个简单的解释：假设在同一个AP所覆盖的无线网络范围内的两个Station A和B，它们之间可能会因为距离的原因互相不可见（例如它们在AP网络范围的两端，而这两端的距离大于两者的信号覆盖范围），但是AP却知道它们是在自己的范围内，当一个A想要在AP网络中进行通信的时候，必定要经过AP转发它的信息，由于A不知道B的存在，所以如果同时B也通过AP进行网络通信，那么会出现AP同时收到A、B两个Station的通信请求，而在这无线网络中是不允许的（无线网络中，同一时刻不能有多个人传输数据）。在这种情况下，B和A相互干扰了对方的通信，但是却互相不可见（不可见的节点互相被称作隐藏节点）。如果在一个网络中，这样的节点很多，那么势必会影响网络的性能（因为一旦数据发送失败，就要重传，隐藏节点会导致重传的几率增大）。这个时候，可采用RTS和CTS机制。即：在A想要通信的时候，先广播发送RTS给AP，告诉AP“它想要通信”，同时接受到RTS的别的Station（它们对发送RTS的Station言而可见）会知道A将要发送数据，于是它们不会发送数据以免干扰A：AP收到RTS之后，会广播发送CTS，告诉所有在AP范围内的Station（包括对A而言的隐藏节点B）“A将要通信（同时也相当于告诉A，A可以无干扰的发送信息了）”，这样对A而言的隐藏节点B也知道有一个A的存在并且要发送信息了，于是B就不会干扰A了。这里，A和B两者可以在不同的网络上，也就是说，不同网络的工作站之间也可以通过RTS/CTS来清除相互的干扰。</p>
+</li>
+<li>Beacon Interval：表示无线路由定期广播其SSID的时间间隔，这个一般不会特别设置，就采用默认值即可。如果不广播了，那么Station端扫描的时候可能会发现不定期广播的AP对应的SSID的网络不见了，所以可能会断开连接。这里定期广播，表示AP会定时向其范围内广播SSID的信息，以表示AP的存在，这样Station进入一个区域之后，就能够通过扫描知道这个区域是否有AP的存在。当然，除了AP广播SSID以告知其无限网络存在之外，Station也可以主动广播探寻包，在其能够覆盖的范围内询问是否有AP存在（即我们通常所说的扫描寻找接入点）。</li>
+<li>DTIM Interval：DTIM/TIM表示告诉Station，AP在为Station做package buffer（例如Station睡眠的时候）的缓存时间。为了节省电池使用时间，处于无线网络中的Station可能会在一定时间之后自动进入休眠状态。这个时候，AP会为这个Station缓存发送给它的数据，而处于休眠状态的Station只会在一定的时间间隔内给AP发送一个数据帧，以确认是否有发送给自己的数据存在。例如，当我们在主机上ping另外一台睡眠的机器的时候，收到另外一台机器响应的时间，要比它不休眠的时候响应的时间长的多。</li>
+<li><p>Fragmentation Threshold：表示一个package的分片阈值，我们可以设置分片大小，当发送的数据包超过这个阈值后，802.11协议会自动对这个数据包进行分割。如果设置的这个分片值越小，那么整个数据包越容易传输成功（因为如果出错，那么只需要传送一个片段而不是整个包，无线Wi-Fi网络中数据传输时出错的概率比有线的以太网要大得多的多），当然开销也就越大（因为需要额外的信息标记每个分片，以及各个分片传输成功之后涉及到的重组问题）。</p>
+<p>以上更新于2019.1.17….</p>
 </li>
 </ol>
-<p>以上更新于2018.1.16….</p>
+<h2 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h2><p>一般来说，我们机器上的软件抓取无线网卡上面的数据包的时候，其实这些包的目的地址都是这台机器的无线网卡</p>
 
       
     </div>
@@ -376,7 +387,7 @@
         <p><span>本文标题:</span><a href="/2019/01/05/Wi-Fi基本知识学习/">Wi-Fi基本知识学习</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">A Hai</a></p>
         <p><span>发布时间:</span>2019-01-05, 22:40:40</p>
-        <p><span>最后更新:</span>2019-01-16, 23:28:06</p>
+        <p><span>最后更新:</span>2019-01-17, 21:18:57</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/01/05/Wi-Fi基本知识学习/" title="Wi-Fi基本知识学习">http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/　　作者: A Hai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -406,7 +417,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概述"><span class="toc-number">1.</span> <span class="toc-text">基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有线和无线网络"><span class="toc-number">1.1.</span> <span class="toc-text">有线和无线网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.2.</span> <span class="toc-text">协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#术语"><span class="toc-number">1.3.</span> <span class="toc-text">术语</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践基础"><span class="toc-number">2.</span> <span class="toc-text">实践基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些参数"><span class="toc-number">2.1.</span> <span class="toc-text">一些参数</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概述"><span class="toc-number">1.</span> <span class="toc-text">基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有线和无线网络"><span class="toc-number">1.1.</span> <span class="toc-text">有线和无线网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.2.</span> <span class="toc-text">协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#术语"><span class="toc-number">1.3.</span> <span class="toc-text">术语</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践基础"><span class="toc-number">2.</span> <span class="toc-text">实践基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些参数"><span class="toc-number">2.1.</span> <span class="toc-text">一些参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抓包"><span class="toc-number">2.2.</span> <span class="toc-text">抓包</span></a></li></ol></li></ol>
         
     </div>
     <style>
