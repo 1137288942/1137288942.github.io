@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="ahai‘s blog——阿海的Blog">
 <meta property="og:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-17T13:18:57.523Z">
+<meta property="og:updated_time" content="2019-01-19T01:46:10.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wi-Fi基本知识学习">
 <meta name="twitter:description" content="因为毕设是在做无线方面的内容，也是想借此机会学的扎实一些，这里对Wi-Fi的802.11协议中比较常见的知识做一个简单的总结和整理，便于后续的学习。">
@@ -193,7 +193,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iot开发/">Iot开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wi-Fi/">Wi-Fi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wi-Fi信号采集/">Wi-Fi信号采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/daily/">daily</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安恒月赛/">安恒月赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/实战/">实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无线基础知识/">无线基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/毕业设计/">毕业设计</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iot开发/">Iot开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nmap/">Nmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wi-Fi/">Wi-Fi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wi-Fi信号采集/">Wi-Fi信号采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/daily/">daily</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安恒月赛/">安恒月赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/实战/">实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无线基础知识/">无线基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/毕业设计/">毕业设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/端口扫描/">端口扫描</a></li></ul>
                     </div>
                 </section>
                 
@@ -375,8 +375,36 @@
 <p>以上更新于2019.1.17….</p>
 </li>
 </ol>
-<h2 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h2><p>一般来说，我们机器上的软件抓取无线网卡上面的数据包的时候，其实这些包的目的地址都是这台机器的无线网卡</p>
-
+<h2 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h2><p>一般来说，我们机器上的软件抓取无线网卡上面的数据包的时候，其实这些包的目的地址都是这台机器的无线网卡，因为不是发给这个机器无线网卡的包都被网卡过滤了。所以我们想要抓取所处无线网络环境下所有的包的时候，需要给机器配备一种特殊的设备（sniffer就是嗅探器），然后再通过抓包工具抓取并分析。有一个硬件设备叫做AirPcap，就是做这个用的，大有几百到上千美金，他可以同时作为嗅探器或者无线网卡使用，不过作为嗅探器的时候，会抓取所有经过它的包。这个工具目前只有windows上面的驱动，所以使用这个工具，只能在Windows上面，配合Wireshark抓包软件进行抓包。</p>
+<p>这里假设采用AirPcap嗅探，Wireshark软件抓包（其他抓包软件，例如Linux下面的tcpdump等分析类似）。不用图形方式详细展示具体的抓包过程以及分析方法了，主要说一下抓包（这里的包实际主要指的是网络层以下的包，更常见的称呼应该是数据帧）时应该注意的问题。</p>
+<ol>
+<li>Wireshark展示包的时候，大致都是按照协议规定的字段展示，有些地方按照它自己特定的方式展示。因为这里着重讲述一些抓包时注意的基本原理上面的东西，所以不会对此进行过多阐述。大致就是：Wireshark软件中，对包展示的时候，按照协议规定的字段分别用Header和Body两个部分展示；另外，在Header之前还有两个部分是Wireshark为方便用户而展示的包的大小、时间等全局信息（例如见过表示这个包在b和g模式中的Channel 1时，用“BG1”表示）。所以，其实我们分析的时候，实际应该按照后面的Header和Body两个部分进行。后面讲基于以上所述，进行进一步讲解。</li>
+<li>抓包的时候，需要首先确认这个包是否是完整、正确的包。只要是校验位（checksum）不对的，就是错误的包，也无法确定接收的时候哪里出了差错，所以这个包应该是忽略的，几乎没有分析的价值。另外，抓包的时候，由于干扰等原因，抓取的内容可能不是在实际传输所处的Channel上的包（例如在Channel1上嗅探，却嗅探到了Channel2的包）。</li>
+<li>抓取授权阶段的包，需要注意实际的授权是在后面进行的。Authentication的时候，开始阶段实际是Open的（即开放无授权），也就是说，开始实际已经建立好了连接，所以我们在抓包的时候，开始看到的一般都是通过验证，但是后面紧接着就采用了类似802.11x等安全加强的协议，来进行再次加强认证，如果这里无法通过则立即将已经建立的Association断开。这样的机制，是因为原来的802.11没有充分考虑安全才会这样的，这样也兼容了以前的802.11。</li>
+<li>抓取的包的数据，要注意这个包是否是被加密过的，根据协议标准的描述，包中如果有dataprotected字段，则表示这个数据本身是被加了密的，不知道这个数据具体是什么，当然，如果有密码，Wireshark也有一个可以按照这个密码解密的工具，有时候不好用。这里所说的数据加密和网络的加密不一样，可能访问网络本身是需要密码的（网络是security的），而数据本身没有encrypted（加密）。对于一个加了密的数据包，我们一般看不出来这个包到底是做什么用的或者什么类型的等等。</li>
+<li>抓包的时候，要注意包中指示的源地址和目的地址以及包的序列号。在无线网络中通信的时候，我们抓包的时候可能会看到被抓去的包对应AP的MAC地址是不存在的，其实抓包时AP的MAC是BSSID，它和实际标注的MAC地址不一定一样（但是一般都差不多，也就是之后最后面的几位不一样）。有时候，我们看到抓取的包中的MAC地址有许多只相差几位，那么可能它们都属于一个设备（因为虽然设备可能只标注了一个网卡的MAC地址，但是它却“虚拟”出或者实际有多个MAC地址），所以当我们看到包中对应两个AP的MAC地址几乎一样的时候，一般来说，这两个MAC地址很可能就是一个设备的。还有在抓包的时候，一个地址上面的包的sequence（序号）是连续的，除非丢包了导致重复或者确缺失。如果一个设备虚拟出来两个地址，那么也可能由于没有经过什么处理，导致这两个地址上面的包共同起来是连续的（如前所述，这两个地址和MAC很接近，应该是BSSID）。</li>
+<li>抓取的数据帧如果是广播帧则不需要确认（ACK），如果是单播帧，则一般需要确认（ACK）。例如，Probe帧是广播帧，所以它无对应的ACK确认帧，对Probe的回复则叫做Probe Response；注意ACK帧本身用于确认，是单播的，但是它本身却不需要再被确认了。从包中的目的MAC地址中，可以看出这个包是广播/多播帧还是单播帧，MAC第一个字节的第一位是1，表示组播，前两位是1表示广播，第一个字节第一个位是0表示单播。这里注意，MAC不是值，而是一个Pattern，所以没有Endian之说，也没有哪个位高，哪个MAC大之说。例如：“a8:27:26:…:b7”，这里第一个字节就是a8（10101000），其第一个字节的第一位就是8的最“右”位，即“0”，所以它的第一个字节的第一个位是0，是一个单播地址。其实，这里涉及到大端小端的问题，后面也会讲到，总之，以太网线路上按“Big Endian”字节序传送报文（也就是最高字节先传送），而比特序是“Little Endian”（也就是字节内最低位先传送）所以，一个十六进制表示法表示的MAC地址01-80-C2-00-00-00，传送时的bit顺序就是：1000 0000 0000 0001 0100 0011 0000 0000 0000 0000 0000 0000。</li>
+<li>使用Wireshark在抓包或者显示包的时候，都可以设置过滤器（filter）。抓包时候设置的过滤器叫capture filter，它是用BPF（berkerley package filter）这个比较通用的语言来描述（注意这不是Wireshark专用的filter语言，而是一个通用的语言），但是抓包期间的过滤，有时候不准，所以我们一般先将所有的包抓取下来，然后用Wireshark中显示的过滤器（即View filter）来显示我们关注的包，这里我们可以用macro来定义比较复杂的显示过来条件。保存的时候，可以用按照显示过滤还是抓取过滤的方式保存内容</li>
+<li>尽量不要抓取Channel Width为40MHz的Channel上的帧。我们还需要注意的是，使用Sniffer抓取无线网络包的时候，AirPcap无法正常抓取40MHz Channel Width的包，或者说对抓取这个Channel Width上面的包支持不好。如果非要抓取40MHz Channel Width的包，那么就在40或者36号Channel上面进行抓取，并在Wireshark上面设置“Channel=36，offset+1”（平时offset=0），这样能够抓取Channel Width为40MHz的包（但是，其他Channel上面的40MHz的包还是无法抓取），这是由AirPcap内部的芯片固件的问题决定的（估计broad com芯片公司也不愿意花过多的精力来支持这个很少有人用的抓包工具的这个功能）</li>
+</ol>
+<p>另外，假设一个无线工作站是基于Android系统的（例如平板电脑或者智能手机和电子书）那么我们可以利用“wpa_cli status”命令来可以查看当前设备连接的SSID、BSSID、MAC、IP等信息，（这里“cli”=“command line interface”)。还有更“复杂”的命令“wc”和“wl”，其中wc是比较上层的命令，wl是下层的命令（是基于芯片是否支持的，例如wl在Broadcom芯片上支持，但是在ti上面就没有了）。</p>
+<h1 id="一些原理"><a href="#一些原理" class="headerlink" title="一些原理"></a>一些原理</h1><h2 id="常见的帧"><a href="#常见的帧" class="headerlink" title="常见的帧"></a>常见的帧</h2><p>在802.11中的帧有三种类型：管理帧（Management Frame，例如Beacon帧，Association帧）、控制帧（Control Frame，例如RTS帧，CTS帧、ACK帧）、数据帧（Data Frame，承载数据的载体，其中的DS字段用来标识方向很重要）。帧头部中的类型字段中会标识出该帧属于哪个字段。</p>
+<ol>
+<li>Beacon帧：Beacon帧定时广播发送，主要用来通知网络AP的存在性。Station和AP建立Association的时候，也需要用到Beacon。Station可以通过Scan来扫描到Beacon，从而得知AP的存在，也可以在扫描的时候主动发送Probe来探寻AP是否存在。也就是说，建立Association的时候有主动的扫描或着被动的扫描两种方式。另外，Beacon还包含了关于Power Save、以及地区等信息。</li>
+<li>Association帧：通常Association帧都有Probe Request和相应的Probe Response。Association的Request中有其所需要的Channel以及Data Rate等状态，以便让AP决定是否让他自己建立Association。而关联是否成功，主要是看Response中Status code是否为Success</li>
+<li><p>Data帧：Data Frame具有方向，这个方向用DS（分布式系统）字段来标识，以区分不同类型帧中关于地址的解析方式；其他的类型Frame例如channel Frame或者管理帧中，这个字段全是零。这个字段用两位表示，这两个位的含义分别表示“To Ds”和“From Ds”，大致含义如下：</p>
+<p> a）To Ds：表示Station -&gt; AP，一般也叫Upload</p>
+<p> b）From Ds：表示AP -&gt; Station，一般也叫Download</p>
+<p> 这里我们大致将DS看作AP，To/From是从AP的角度来考虑的。To DS就是让AP干活。另外Data Frame中还有一个比较重要的字段就是Sequence，表示帧的序号。重传帧序号一样，但是多了一个Retry的字段表示该帧是重传的。</p>
+<p> 为了便于理解，这里再次详细解释一下DS字段的含义：</p>
+<p> To DS=0,From DS=0：表示Station之间的AD Hoc类似的通信，或者控制帧、管理帧。</p>
+<p> To DS=0,From DS=1：Station接受的帧。</p>
+<p> To DS=1,From DS=0：Station发送的帧。</p>
+<p> To DS=1,From DS=1：无线桥接器上的数据帧。</p>
+<p> 这里，我们主要关注To DS和From DS分别是01和10的情况，DS虽然大致等于AP但是它不是AP，它其实是一个系统，从Station的角度来看，比较容易理解。并且To DS和From DS一定是无线网络上面数据帧才有的字段</p>
+</li>
+</ol>
+<h2 id="帧和大端小端"><a href="#帧和大端小端" class="headerlink" title="帧和大端小端"></a>帧和大端小端</h2>
       
     </div>
     
@@ -387,7 +415,7 @@
         <p><span>本文标题:</span><a href="/2019/01/05/Wi-Fi基本知识学习/">Wi-Fi基本知识学习</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">A Hai</a></p>
         <p><span>发布时间:</span>2019-01-05, 22:40:40</p>
-        <p><span>最后更新:</span>2019-01-17, 21:18:57</p>
+        <p><span>最后更新:</span>2019-01-19, 09:46:10</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/01/05/Wi-Fi基本知识学习/" title="Wi-Fi基本知识学习">http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.de4thstr0ke.com/2019/01/05/Wi-Fi基本知识学习/　　作者: A Hai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -401,6 +429,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/04/01/网络攻防实践_day1/">
+                    网络攻防实践_day1
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -417,7 +451,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概述"><span class="toc-number">1.</span> <span class="toc-text">基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有线和无线网络"><span class="toc-number">1.1.</span> <span class="toc-text">有线和无线网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.2.</span> <span class="toc-text">协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#术语"><span class="toc-number">1.3.</span> <span class="toc-text">术语</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践基础"><span class="toc-number">2.</span> <span class="toc-text">实践基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些参数"><span class="toc-number">2.1.</span> <span class="toc-text">一些参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抓包"><span class="toc-number">2.2.</span> <span class="toc-text">抓包</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概述"><span class="toc-number">1.</span> <span class="toc-text">基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有线和无线网络"><span class="toc-number">1.1.</span> <span class="toc-text">有线和无线网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.2.</span> <span class="toc-text">协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#术语"><span class="toc-number">1.3.</span> <span class="toc-text">术语</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践基础"><span class="toc-number">2.</span> <span class="toc-text">实践基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些参数"><span class="toc-number">2.1.</span> <span class="toc-text">一些参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抓包"><span class="toc-number">2.2.</span> <span class="toc-text">抓包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些原理"><span class="toc-number">3.</span> <span class="toc-text">一些原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见的帧"><span class="toc-number">3.1.</span> <span class="toc-text">常见的帧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#帧和大端小端"><span class="toc-number">3.2.</span> <span class="toc-text">帧和大端小端</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -495,7 +529,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2019/04/01/网络攻防实践_day1/" title="上一篇: 网络攻防实践_day1">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -507,7 +543,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/Wi-Fi基本知识学习/">Wi-Fi基本知识学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/28/手机WI-FI信号采集网络的设计与实现/">手机WI-FI信号采集网络的设计与实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/27/2018网络安全攻防演练/">2018网络安全攻防演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/">2018安恒杯十二月月赛-部分WriteUp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/21/Crypto-Task-1/">Crypto Task 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/20/Hello-my-New-World/">Hello my New World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/01/网络攻防实践_day1/">网络攻防实践_day1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/Wi-Fi基本知识学习/">Wi-Fi基本知识学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/28/手机WI-FI信号采集网络的设计与实现/">手机WI-FI信号采集网络的设计与实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/27/2018网络安全攻防演练/">2018网络安全攻防演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/">2018安恒杯十二月月赛-部分WriteUp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/21/Crypto-Task-1/">Crypto Task 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/20/Hello-my-New-World/">Hello my New World</a></li></ul>
 
 
 
