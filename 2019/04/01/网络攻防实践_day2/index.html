@@ -15,25 +15,28 @@
 
 
 
-<meta name="description" content="2018年安恒杯十二月月赛，部分misc、blockchain题目WriteUp。">
-<meta name="keywords" content="安恒月赛,CTF">
+<meta name="description" content="好久没有更新博客了，原因也就是一直都在忙其他事情，没把心思放在写博客和搞技术上。也是手痒了，借着上课写工具的机会，继续为我的博客添砖加瓦。">
+<meta name="keywords" content="Nmap,端口扫描">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018安恒杯十二月月赛-部分WriteUp">
-<meta property="og:url" content="http://www.de4thstr0ke.com/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/index.html">
+<meta property="og:title" content="网络攻防实践_day1">
+<meta property="og:url" content="http://www.de4thstr0ke.com/2019/04/01/网络攻防实践_day2/index.html">
 <meta property="og:site_name" content="ahai‘s blog——阿海的Blog">
-<meta property="og:description" content="2018年安恒杯十二月月赛，部分misc、blockchain题目WriteUp。">
+<meta property="og:description" content="好久没有更新博客了，原因也就是一直都在忙其他事情，没把心思放在写博客和搞技术上。也是手痒了，借着上课写工具的机会，继续为我的博客添砖加瓦。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.imgur.com/KxfXS1P.jpg">
-<meta property="og:image" content="https://i.imgur.com/NwgyFtX.jpg">
-<meta property="og:image" content="https://i.imgur.com/nq8lv5n.jpg">
-<meta property="og:image" content="https://i.imgur.com/7dpWJxF.png">
-<meta property="og:image" content="https://i.imgur.com/oFziHrn.jpg">
-<meta property="og:image" content="https://i.imgur.com/78xqDhM.jpg">
-<meta property="og:updated_time" content="2018-12-22T13:34:54.285Z">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_16-49-12.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_16-44-48.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_16-55-38.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-03-07.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-13-03.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-19-23.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-22-55.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-23-59.jpg">
+<meta property="og:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-25-13.jpg">
+<meta property="og:updated_time" content="2019-04-01T09:33:17.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018安恒杯十二月月赛-部分WriteUp">
-<meta name="twitter:description" content="2018年安恒杯十二月月赛，部分misc、blockchain题目WriteUp。">
-<meta name="twitter:image" content="https://i.imgur.com/KxfXS1P.jpg">
+<meta name="twitter:title" content="网络攻防实践_day1">
+<meta name="twitter:description" content="好久没有更新博客了，原因也就是一直都在忙其他事情，没把心思放在写博客和搞技术上。也是手痒了，借着上课写工具的机会，继续为我的博客添砖加瓦。">
+<meta name="twitter:image" content="http://www.de4thstr0ke.com/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_16-49-12.jpg">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -65,7 +68,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>2018安恒杯十二月月赛-部分WriteUp | ahai‘s blog——阿海的Blog</title>
+<title>网络攻防实践_day1 | ahai‘s blog——阿海的Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -273,11 +276,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-2018安恒杯十二月月赛-部分WriteUp" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-网络攻防实践_day2" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/" class="article-date">
-      <time datetime="2018-12-22T12:25:23.000Z" itemprop="datePublished">2018-12-22</time>
+      <a href="/2019/04/01/网络攻防实践_day2/" class="article-date">
+      <time datetime="2019-04-01T09:35:40.000Z" itemprop="datePublished">2019-04-01</time>
 </a>
 
 
@@ -292,7 +295,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2018安恒杯十二月月赛-部分WriteUp
+      网络攻防实践_day1
     </h1>
   
 
@@ -303,7 +306,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安恒月赛/">安恒月赛</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nmap/">Nmap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/端口扫描/">端口扫描</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -313,45 +316,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>早早的就报了名，可惜今天满课，只有中午和下午4点之后的时间打了一下比赛，pwn题是战队的大佬帮忙出的，听说蛮简单的，等Peanuts大佬更新出WriteUp我再更新学习下。总的来说月赛的题目难度较小，比较适合新手入门。</p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p>解压题目包，给出了两个文件</p>
-<pre><code>-备忘录.txt
--只要学不死就往死里学.zip
-</code></pre><p>通过解压软件可以看到在zip包中也存在“备忘录.txt“<br>这样的话，必然是已知明文攻击了</p>
-<p><a href="http://www.cnblogs.com/leixiao-/p/9824557.html" target="_blank" rel="noopener">zip的各种攻击方式</a></p>
-<p>这样就可以获得破解密码 <strong>1qazmko098</strong></p>
-<p>解压得到了一个word文件</p>
-<pre><code>-学习资料.docx
-</code></pre><p><img src="https://i.imgur.com/KxfXS1P.jpg" alt=""></p>
-<p>参考这其中的方法 <a href="https://blog.csdn.net/DRondong/article/details/79322799" target="_blank" rel="noopener">word隐写方法</a></p>
-<p>移动图片就能看到flag</p>
-<p><img src="https://i.imgur.com/NwgyFtX.jpg" alt=""></p>
-<h3 id="JUJU"><a href="#JUJU" class="headerlink" title="JUJU"></a>JUJU</h3><p>直接解压出一个损坏的png文件</p>
-<pre><code>-juju.png
-</code></pre><p>因此先使用010editor修复下</p>
-<p>直接跑png模板就能将CRC校验值修改过来，从而能正常打开图片</p>
-<p>题目中提示有11只猪，但明显图片上的数目不够，因此考虑是不是要修改图片长度</p>
-<p><a href="https://blog.csdn.net/persist213/article/details/79374914" target="_blank" rel="noopener">misc中的png隐写</a></p>
-<p>从中可以了解到，png的宽度是不可以更改的，但是长度可以进行修改，因此稍微将长度加大，就可以在下文中看到字符串</p>
-<p><img src="https://i.imgur.com/nq8lv5n.jpg" alt=""></p>
-<pre><code>MZWGCZ33GQZTQMTEM5SGMMTEPU=====
-</code></pre><p>显然不是base64（base64最多只能有两个=）</p>
-<p>因此考虑尝试其他base编码，经过base32解码后能看到flag</p>
-<p><img src="https://i.imgur.com/7dpWJxF.png" alt=""></p>
-<p>按要求将{}中的字符串md5后就是最后的答案</p>
-<h2 id="Blockchain"><a href="#Blockchain" class="headerlink" title="Blockchain"></a>Blockchain</h2><h3 id="CoinFlip"><a href="#CoinFlip" class="headerlink" title="CoinFlip"></a>CoinFlip</h3><p>我也是第一次接触区块链的题目，也是听说晚上有原题，就搜了下然后进行了复现</p>
-<p><a href="https://www.secpulse.com/archives/73682.html" target="_blank" rel="noopener">https://www.secpulse.com/archives/73682.html</a></p>
-<p><a href="http://foreversong.cn/archives/1295" target="_blank" rel="noopener">http://foreversong.cn/archives/1295</a></p>
-<p><a href="https://remix.ethereum.org/" target="_blank" rel="noopener">https://remix.ethereum.org/</a></p>
-<p>将.sol文件直接拖进去，按照</p>
-<p><a href="https://www.linkedbyx.com/taskinfo/368/detail" target="_blank" rel="noopener">https://www.linkedbyx.com/taskinfo/368/detail</a></p>
-<p>文章里的操作步骤进行复现</p>
-<p>要注意找好对应的版本</p>
-<p><img src="https://i.imgur.com/oFziHrn.jpg" alt=""></p>
-<p><img src="https://i.imgur.com/78xqDhM.jpg" alt=""></p>
-<p>最后就能到邮件中收到flag</p>
-<p>flag{e0a8634dbb9bd36581a65ca00e2ca886}</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>凑巧今天并列第三名，拿了10w积分，才知道原来安恒的奖励力度这么高（我才不是为了奖励…）这样的话，还是要多参加一下的哈哈哈哈。写的不够到位，各位大佬可以发邮件批评指正，邮箱就在头像下方呦！</p>
+        <h1 id="网络攻防实践-端口扫描"><a href="#网络攻防实践-端口扫描" class="headerlink" title="网络攻防实践_端口扫描"></a>网络攻防实践_端口扫描</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>端口扫描是渗透测试中的重要一环。所谓的端口扫描，就是指通过TCP握手或者别的方式来判别一个给定主机上的某些端口是否处理开放，或者说监听的状态。现有的使用比较广泛的端口扫描工具是nmap。毋庸置疑，nmap是一款非常强大且易于使用的软件。但nmap是一款运行于terminal中的软件，有时在别的代码中调用并不是很方便，甚至没有相应的库。另外，nmap依赖的其他库较多，在较老的系统中可能无法使用较新的nmap，这样会造成扫描的不便。另外，nmap在扫描时需要root权限。基于这个原因，我用python2.7自带的库开发了一款高效的多线程端口扫描器来满足使用需要。</p>
+<h2 id="任务目标"><a href="#任务目标" class="headerlink" title="任务目标"></a>任务目标</h2><pre><code>   1、实现指定端口扫描
+2、线程加速
+3、获取banner信息
+4、通过主机与端口信息对比漏洞数据库
+</code></pre><h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="一、实现指定端口扫描"><a href="#一、实现指定端口扫描" class="headerlink" title="一、实现指定端口扫描"></a>一、实现指定端口扫描</h3><p>为了实现端口扫描，我们首先明白如何使用python socket与给定的(ip, port)进行TCP握手。为了完成TCP握手，我们需要先初始化一个TCP socket。在python中新建一个TCP socket的代码如下：</p>
+<p><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_16-49-12.jpg" alt=""></p>
+<p>其中</p>
+<p>(1)是初始化socket的代码，socket.AF_INTE参数表示IPv4 socket，socket.SOCK_STREAM参数表示TCP socket。这样我们就初始化了一个使用IPv4，TCP协议的socket。</p>
+<p>(2)使用了socket.setsockopt()来设置socket的另一些参数。socket.SOL_SOCKET指定当前socket将使用setsockopt()中后面的参数。socket.SO_REUSEPORT表明当前socket使用了可复用端口的设置。socket.SO_REUSEPORT具体含义可以参考我的另一篇文章。</p>
+<p>(3)将socket的连接超时时间设置为delay变量所对应的时间（以秒为单位）。这么做是为了防止我们在一个连接上等待太久。<br>了解了如何新建一个socket，我们就可以开始对给定的(ip,port)对进行TCP连接。代码如下：</p>
+<p><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_16-44-48.jpg" alt=""></p>
+<h3 id="二、实现多线程扫描"><a href="#二、实现多线程扫描" class="headerlink" title="二、实现多线程扫描"></a>二、实现多线程扫描</h3><p>必然是要通过线程来加速扫描过程，但考虑到全端口的大面积扫描，单线程就显得过于鸡肋了。所以，这里直接选择多线程进行扫描。设计思路也很简单，就是为每一个端口单独开设一个线程来进行扫描。我也是查找了一些常用的端口号<br><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_16-55-38.jpg" alt=""></p>
+<p>对于一个给定的ip地址，扫描的过程是这样的：</p>
+<pre><code>1. 取出一个端口
+2. 新建一条线程，利用__TCP_connect()函数对该(ip,port)进行连接操作。
+3. 调用thread.start()方法，使扫描的子线程开始工作并且命令主线程等待子线程死亡后再结束。
+4. 重复这个过程直到所有的端口都被扫描过。
+</code></pre><p>根据上面的思路，代码如下：</p>
+<p><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-03-07.jpg" alt=""></p>
+<h3 id="三、获取banner信息"><a href="#三、获取banner信息" class="headerlink" title="三、获取banner信息"></a>三、获取banner信息</h3><p>获取banner的方法比较简单，只需要在建立连接后插入一段代码即可，如下：<br><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-13-03.jpg" alt=""></p>
+<h3 id="四、调用漏洞库的对比情况"><a href="#四、调用漏洞库的对比情况" class="headerlink" title="四、调用漏洞库的对比情况"></a>四、调用漏洞库的对比情况</h3><p>大概查了下资料，这里需要根据扫出来的端口信息，去调用metasploit漏洞库，也就是通过python终端去执行os.system()命令，具体实现没有多大意义，这里不再添加该功能</p>
+<h2 id="实践效果"><a href="#实践效果" class="headerlink" title="实践效果"></a>实践效果</h2><p>我自己在实验室找了台主机来做测试，一方面使用我自己的扫描器，另一方面使用Nmap的 -sT 来进行扫描，对比结果来查看实际效果。</p>
+<p>Nmap扫描结果1<br><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-19-23.jpg" alt=""></p>
+<p>我的扫描器结果1<br><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-22-55.jpg" alt=""></p>
+<p>Nmap扫描结果2<br><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-23-59.jpg" alt=""></p>
+<p>我的扫描器结果2<br><img src="/Users/ahai/Documents/网络攻防实践/Xnip2019-04-01_17-25-13.jpg" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上面的结果来看，在banner的获取与扫描速度方面，我的稍稍占优。但在端口判断的准确率上我的会有所不足，当扫描的端口数量过多时，就会出现漏报现象，并且我的扫描器只能针对单台主机，并不能实现网段扫描，这也是一大弊端</p>
 
       
     </div>
@@ -360,13 +352,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/">2018安恒杯十二月月赛-部分WriteUp</a></p>
+        <p><span>本文标题:</span><a href="/2019/04/01/网络攻防实践_day2/">网络攻防实践_day1</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">A Hai</a></p>
-        <p><span>发布时间:</span>2018-12-22, 20:25:23</p>
-        <p><span>最后更新:</span>2018-12-22, 21:34:54</p>
+        <p><span>发布时间:</span>2019-04-01, 17:35:40</p>
+        <p><span>最后更新:</span>2019-04-01, 17:33:17</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/" title="2018安恒杯十二月月赛-部分WriteUp">http://www.de4thstr0ke.com/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.de4thstr0ke.com/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/　　作者: A Hai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/04/01/网络攻防实践_day2/" title="网络攻防实践_day1">http://www.de4thstr0ke.com/2019/04/01/网络攻防实践_day2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.de4thstr0ke.com/2019/04/01/网络攻防实践_day2/　　作者: A Hai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -379,15 +371,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/27/2018网络安全攻防演练/">
-                    2018网络安全攻防演练
+                <a href="/2019/04/01/网络攻防实践_day1/">
+                    网络攻防实践_day1
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/21/Crypto-Task-1/">
-                    Crypto Task 1
+                <a href="/2019/04/01/网络攻防实践_day3/">
+                    网络攻防实践_day1
                 </a>
             </div>
         
@@ -399,7 +391,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">2.1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习资料"><span class="toc-number">2.1.1.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JUJU"><span class="toc-number">2.1.2.</span> <span class="toc-text">JUJU</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blockchain"><span class="toc-number">2.2.</span> <span class="toc-text">Blockchain</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CoinFlip"><span class="toc-number">2.2.1.</span> <span class="toc-text">CoinFlip</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#网络攻防实践-端口扫描"><span class="toc-number">1.</span> <span class="toc-text">网络攻防实践_端口扫描</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-number">1.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务目标"><span class="toc-number">1.2.</span> <span class="toc-text">任务目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现步骤"><span class="toc-number">1.3.</span> <span class="toc-text">实现步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、实现指定端口扫描"><span class="toc-number">1.3.1.</span> <span class="toc-text">一、实现指定端口扫描</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、实现多线程扫描"><span class="toc-number">1.3.2.</span> <span class="toc-text">二、实现多线程扫描</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、获取banner信息"><span class="toc-number">1.3.3.</span> <span class="toc-text">三、获取banner信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、调用漏洞库的对比情况"><span class="toc-number">1.3.4.</span> <span class="toc-text">四、调用漏洞库的对比情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实践效果"><span class="toc-number">1.4.</span> <span class="toc-text">实践效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -435,7 +427,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"2018安恒杯十二月月赛-部分WriteUp　| ahai‘s blog——阿海的Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"网络攻防实践_day1　| ahai‘s blog——阿海的Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -454,8 +446,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.de4thstr0ke.com/2018/12/22/2018安恒杯十二月月赛-部分WriteUp/';
-            this.page.identifier = '2018/12/22/2018安恒杯十二月月赛-部分WriteUp/';
+            this.page.url = 'http://www.de4thstr0ke.com/2019/04/01/网络攻防实践_day2/';
+            this.page.identifier = '2019/04/01/网络攻防实践_day2/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -477,7 +469,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/27/2018网络安全攻防演练/" title="上一篇: 2018网络安全攻防演练">
+            <a href="/2019/04/01/网络攻防实践_day1/" title="上一篇: 网络攻防实践_day1">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -485,7 +477,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/12/21/Crypto-Task-1/" title="下一篇: Crypto Task 1">
+            <a href="/2019/04/01/网络攻防实践_day3/" title="下一篇: 网络攻防实践_day1">
                 <i class="fa fa-angle-right"></i>
             </a>
         
